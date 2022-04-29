@@ -1,10 +1,9 @@
 from pathlib import Path
 from setuptools import setup
-home = str(Path.home())
 setup(
-  name='some_more_code',
+  name='package_2',
   version='0.1.0',
   python_requires='>=3.8',
-  modules=["some_more_code"],
+  packages=["."],
   install_requires=[f"package_1 @ file://localhost/{Path(__file__).parents[1].resolve()}/Databricks-Test/monorepo/package_1#egg=package_1"]
 )
