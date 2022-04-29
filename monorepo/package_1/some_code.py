@@ -1,1 +1,1 @@
-FRUIT="banana"
+FRUIT_VAR="banana"
