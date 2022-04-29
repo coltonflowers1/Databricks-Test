@@ -5,5 +5,4 @@ setup(
   python_requires='>=3.8',
   packages=["package_1"],
   install_requires=[]
-  
 )
