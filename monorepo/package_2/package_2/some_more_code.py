@@ -1,3 +1,3 @@
-import some_code 
+import package_1.some_code 
 
-print(some_code.FRUIT)
+print(some_code.FRUIT_VAR)
