@@ -11,6 +11,7 @@ def get_dbutils(spark):
 
 IN_DATABRICKS = "DATABRICKS_RUNTIME_VERSION" in os.environ
 if IN_DATABRICKS: 
+  spark = SparkSession.getActiveSession()
   github_api_key = get_dbutils(spark).secrets.get(scope="github", key="coltons_api_key")
 
 def local_pkg(name: str) -> str:
