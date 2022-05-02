@@ -2,9 +2,8 @@ import os
 from pathlib import Path
 import sys
 from setuptools import setup
-# IN_DATABRICKS = sys.env.contains("DATABRICKS_RUNTIME_VERSION")
-# local_install_requirement_location =  os.getcwd() if IN_DATABRICKS else "/databricks/driver/"
-local_install_requirement_location =  os.getcwd() #if IN_DATABRICKS else "/databricks/driver/"
+IN_DATABRICKS = "DATABRICKS_RUNTIME_VERSION" in os.environ
+local_install_requirement_location =  "/databricks/driver/" if IN_DATABRICKS else os.getcwd()
 setup(
   name='package_2',
   version='0.1.0',
