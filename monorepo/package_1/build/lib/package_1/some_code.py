@@ -1,0 +1,1 @@
+FRUIT_VAR="banana"
