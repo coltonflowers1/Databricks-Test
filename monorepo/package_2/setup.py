@@ -1,10 +1,18 @@
 import os
 from pathlib import Path
 from setuptools import setup
-  
+from pyspark.sql import SparkSession
+
+def get_dbutils(spark):
+  from pyspark.dbutils import DBUtils
+  return DBUtils(spark)
+
+
+
 IN_DATABRICKS = "DATABRICKS_RUNTIME_VERSION" in os.environ
 if IN_DATABRICKS: 
-  github_api_key = dbutils.secrets.get(scope="github", key="coltons_api_key")
+  spark = SparkSession.builder.getOrCreate()
+  github_api_key = get_dbutils(spark).secrets.get(scope="github", key="coltons_api_key")
 
 def local_pkg(name: str) -> str:
     """Returns a path to a local package."""
