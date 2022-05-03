@@ -16,7 +16,7 @@ def local_pkg(name: str) -> str:
     """Returns a path to a local package."""
     if IN_DATABRICKS: #pull from github repo, will need to specify api key here.
       # TODO: Retrive Github API key using secret. 
-      return f'{name} @ git+https://github.com/coltonflowers1/Databricks-Test@master#subdirectory=monorepo/{name}'
+      return f'{name} @ git+https://github.com/coltonflowers1/Databricks-Test@main#subdirectory=monorepo/{name}'
     else: #pull from local files
       return f'{name} @ file://localhost/{Path.cwd().parent / name}'
 
